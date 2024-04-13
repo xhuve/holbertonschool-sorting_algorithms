@@ -23,14 +23,13 @@ void selection_sort(int *array, size_t size)
 				min = j;
 				swap = 1;
 			}
-			
 		}
 		if (swap == 1)
-			{
-				tmp = array[min];
-				array[min] = array[i];
-				array[i] = tmp;
-				print_array(array, size);
-			}
+		{
+			tmp = array[min];
+			array[min] = array[i];
+			array[i] = tmp;
+			print_array(array, size);
+		}
 	}
 }
