@@ -2,8 +2,10 @@
 #include "sort.h"
 
 /**
+* swap - swap 2 ints
 *
-*
+* @a: int
+* @b: int
 */
 void swap(int *a, int *b)
 {
@@ -13,8 +15,13 @@ void swap(int *a, int *b)
 }
 
 /**
+* partition - check code
 *
-*
+* @arr: array
+* @lo: int
+* @hi: int
+* @size: size
+* Return: int
 */
 int partition(int *arr, int lo, int hi, size_t size)
 {
@@ -25,7 +32,7 @@ int partition(int *arr, int lo, int hi, size_t size)
 
 	for (j = lo; j < hi; j++)
 	{
-		if(arr[j] < pivot)
+		if (arr[j] < pivot)
 		{
 			i++;
 			if (i != j)
@@ -40,9 +47,18 @@ int partition(int *arr, int lo, int hi, size_t size)
 		swap(&arr[i + 1], &arr[hi]);
 		print_array(arr, size);
 	}
-	return i + 1;
+	return (i + 1);
 }
 
+
+/**
+* rec_quick_sort - check code
+*
+* @arr: array
+* @lo: int
+* @hi: int
+* @size: size
+*/
 void rec_quick_sort(int *arr, int lo, int hi, size_t size)
 {
 	int p_idx;
@@ -50,11 +66,10 @@ void rec_quick_sort(int *arr, int lo, int hi, size_t size)
 	if (lo < hi)
 	{
 		p_idx = partition(arr, lo, hi, size);
-	
+
 		rec_quick_sort(arr, lo, p_idx - 1, size);
 		rec_quick_sort(arr, p_idx + 1, hi, size);
 	}
-	
 }
 
 /**
